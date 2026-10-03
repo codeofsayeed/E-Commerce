@@ -5,10 +5,18 @@ export default function Pagination({ page, pages, setPage, total, perPage }) {
     <div className="pagination">
       <div className="pages">
         {Array.from({ length: pages }, (_, i) => i + 1).map((n) => (
-          <button key={n} className={n === page ? 'active' : ''} onClick={() => setPage(n)}>{n}</button>
+          <button
+            key={n}
+            className={n === page ? "active" : ""}
+            onClick={() => setPage(n)}
+          >
+            {n}
+          </button>
         ))}
       </div>
-      <small>Products from {from} to {to} of {total}</small>
+      <small>
+        Products from {from} to {to} of {total}
+      </small>
     </div>
   );
 }

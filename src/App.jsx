@@ -1,13 +1,21 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ScrollToTop from "./components/ScrollToTop";
 import HomePage from "./pages/HomePage";
 import ProductsPage from "./pages/ProductsPage";
+import AboutPage from "./pages/AboutPage";
+import BrandsPage from "./pages/BrandsPage";
+import StoresPage from "./pages/StoresPage";
 
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/shop" element={<ProductsPage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/about/brands" element={<BrandsPage />} />
+        <Route path="/about/stores" element={<StoresPage />} />
       </Routes>
     </BrowserRouter>
   );

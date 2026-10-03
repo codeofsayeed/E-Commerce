@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { products as mock } from '../data/products';
+import { useEffect, useState } from "react";
+import { products as mock } from "../data/products";
 
 /*
  * Firebase-ready: only this hook needs to change.
