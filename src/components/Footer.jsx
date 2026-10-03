@@ -7,8 +7,8 @@ const cols = {
     { label: "Home", to: "/" },
     { label: "Shop", to: "/shop" },
     { label: "About", to: "/about" },
-    { label: "Contact" },
-    { label: "Journal" },
+    { label: "Contact", to: "/contact" },
+    { label: "Journal", to: "/journal" },
   ],
   SHOP: [
     "Category 1",

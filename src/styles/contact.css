@@ -1,0 +1,133 @@
+.contact-form {
+  margin-top: 72px;
+  max-width: 520px;
+}
+.contact-form h2 {
+  font-size: 24px;
+  margin: 0 0 28px;
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid var(--line);
+  padding: 12px 0;
+  margin-bottom: 6px;
+}
+.field label {
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.field input,
+.field textarea {
+  border: 0;
+  outline: 0;
+  font: inherit;
+  font-size: 12px;
+  padding: 2px 0;
+  resize: vertical;
+  background: transparent;
+}
+.field input::placeholder,
+.field textarea::placeholder {
+  color: var(--muted);
+}
+.field:focus-within {
+  border-bottom-color: var(--ink);
+}
+.field input[aria-invalid="true"],
+.field textarea[aria-invalid="true"] {
+  color: #b42318;
+}
+.error {
+  color: #b42318;
+  font-size: 11px;
+  margin-top: 4px;
+}
+.post-btn {
+  margin-top: 32px;
+  width: 200px;
+  padding: 15px 0;
+  background: var(--ink);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+}
+.post-btn:hover {
+  background: #000;
+}
+.post-btn:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+.form-status {
+  font-size: 12px;
+  color: var(--muted);
+  min-height: 18px;
+  margin: 12px 0 0;
+}
+
+.office-map {
+  position: relative;
+  height: 420px;
+  margin: 72px 0 96px;
+  background: var(--tile);
+}
+.office-map iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+.office-card {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  width: 270px;
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+}
+.office {
+  border-bottom: 1px solid var(--line);
+}
+.office:last-child {
+  border-bottom: 0;
+}
+.office-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 16px 20px;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: left;
+}
+.office-body {
+  list-style: none;
+  margin: 0;
+  padding: 0 20px 20px;
+  font-size: 11px;
+  color: var(--muted);
+}
+.office-body li {
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+@media (max-width: 700px) {
+  .office-map {
+    height: auto;
+    background: none;
+  }
+  .office-map iframe {
+    height: 300px;
+  }
+  .office-card {
+    position: static;
+    width: 100%;
+    box-shadow: none;
+    border: 1px solid var(--line);
+    margin-top: 12px;
+  }
+}
