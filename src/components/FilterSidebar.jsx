@@ -1,5 +1,6 @@
 import { FaPlus } from "react-icons/fa";
-import { categories, brands, colors, priceRanges } from "../data/products";
+import { brands, colors, priceRanges } from "../data/products";
+import useCategories from "../hooks/useCategories";
 
 function Section({ title, children }) {
   return (
@@ -11,6 +12,7 @@ function Section({ title, children }) {
 }
 
 export default function FilterSidebar({ filters, setFilters }) {
+  const categories = useCategories();
   const toggle = (key, value) =>
     setFilters((f) => ({ ...f, [key]: f[key] === value ? null : value }));
 

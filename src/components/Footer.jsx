@@ -64,7 +64,7 @@ export default function Footer() {
           <FaLinkedinIn />
           <FaInstagram />
         </div>
-        <small>2020 Orebi Minimal eCommerce Figma Template by Adveits</small>
+        <small>2026 Orebi Minimal eCommerce Figma Template by Adveits</small>
       </div>
     </footer>
   );

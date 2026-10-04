@@ -1,0 +1,49 @@
+.notfound {
+  padding-top: 72px;
+  padding-bottom: 120px;
+}
+.notfound h1 {
+  font-size: clamp(96px, 16vw, 160px);
+  line-height: 1;
+  font-weight: 700;
+  margin: 0 0 40px;
+  letter-spacing: -2px;
+}
+.notfound p {
+  max-width: 420px;
+  font-size: 11px;
+  line-height: 1.8;
+  color: var(--muted);
+  margin: 0 0 32px;
+}
+.nf-search {
+  display: flex;
+  align-items: center;
+  max-width: 420px;
+  height: 48px;
+  border: 1px solid var(--line);
+  padding: 0 16px;
+  margin-bottom: 32px;
+}
+.nf-search input {
+  flex: 1;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  font-size: 11px;
+  background: transparent;
+}
+.nf-search:focus-within {
+  border-color: var(--ink);
+}
+.btn-dark {
+  display: inline-block;
+  background: var(--ink);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 14px 36px;
+}
+.btn-dark:hover {
+  background: #000;
+}

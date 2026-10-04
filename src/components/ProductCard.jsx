@@ -1,6 +1,8 @@
+import { useCart } from "../context/CartContext";
 import { FaHeart, FaShoppingCart, FaSyncAlt } from "react-icons/fa";
 
 export default function ProductCard({ product, onAddToCart, onWishlist }) {
+  const { addItem } = useCart();
   const { name, price, color, badge, image } = product;
   return (
     <article className="card">
@@ -18,7 +20,11 @@ export default function ProductCard({ product, onAddToCart, onWishlist }) {
           <button>
             Compare <FaSyncAlt size={10} />
           </button>
-          <button onClick={() => onAddToCart?.(product)}>
+          <button
+            onClick={() =>
+              onAddToCart ? onAddToCart(product) : addItem(product)
+            }
+          >
             Add to Cart <FaShoppingCart size={10} />
           </button>
         </div>

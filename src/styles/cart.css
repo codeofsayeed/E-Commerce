@@ -1,0 +1,285 @@
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+.placeholder {
+  background: linear-gradient(135deg, #ececec, #f8f8f8);
+  width: 100%;
+  height: 100%;
+}
+.btn-dark {
+  display: inline-block;
+  background: var(--ink);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 12px 24px;
+}
+.btn-dark:hover {
+  background: #000;
+}
+.btn-dark:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+.error {
+  color: #b42318;
+  font-size: 11px;
+  margin-top: 4px;
+}
+.empty-cart {
+  padding: 48px 0 120px;
+}
+.empty-cart p {
+  color: var(--muted);
+  margin: 0 0 24px;
+}
+.empty-cart h2 {
+  font-size: 24px;
+  margin: 0 0 12px;
+}
+
+/* cart */
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 40px;
+  font-size: 12px;
+}
+.cart-table th {
+  background: var(--bg);
+  text-align: left;
+  font-weight: 700;
+  padding: 16px 20px;
+}
+.cart-table td {
+  padding: 20px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: middle;
+}
+.cart-table .strong {
+  font-weight: 700;
+  font-size: 14px;
+}
+.cart-product {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.cart-product > button {
+  color: var(--muted);
+  padding: 4px;
+}
+.cart-product > button:hover {
+  color: var(--ink);
+}
+.cart-thumb {
+  width: 48px;
+  height: 48px;
+  background: var(--tile);
+  overflow: hidden;
+  flex: none;
+}
+.cart-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.qty {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #ddd;
+}
+.qty button {
+  width: 28px;
+  height: 28px;
+  font-size: 14px;
+}
+.qty span {
+  width: 32px;
+  text-align: center;
+}
+.cart-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+  flex-wrap: wrap;
+}
+.coupon {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.coupon input {
+  height: 34px;
+  border: 1px solid #ddd;
+  padding: 0 12px;
+  font: inherit;
+  font-size: 12px;
+  width: 200px;
+}
+.coupon button {
+  font-size: 12px;
+  font-weight: 700;
+}
+.coupon small {
+  color: var(--muted);
+}
+.update {
+  border: 1px solid #ddd;
+  padding: 10px 20px;
+  font-size: 12px;
+  font-weight: 700;
+}
+.update:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+.totals {
+  margin: 40px 0 96px auto;
+  width: min(100%, 420px);
+}
+.totals h3 {
+  font-size: 20px;
+  margin: 0 0 16px;
+  text-align: right;
+}
+.totals table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 24px;
+  font-size: 12px;
+}
+.totals th,
+.totals td {
+  border: 1px solid var(--line);
+  padding: 12px 16px;
+  text-align: left;
+}
+.totals td {
+  text-align: right;
+}
+.totals .btn-dark {
+  float: right;
+}
+.totals::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* checkout */
+.checkout {
+  max-width: 720px;
+  margin-bottom: 96px;
+}
+.checkout h2 {
+  font-size: 24px;
+  margin: 56px 0 24px;
+}
+.coupon-note {
+  font-size: 11px;
+  color: var(--muted);
+  margin: 40px 0 0;
+}
+.coupon-note a {
+  color: var(--ink);
+  text-decoration: underline;
+}
+.fld {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid var(--line);
+  padding: 12px 0;
+  margin-bottom: 6px;
+}
+.fld label {
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.fld input,
+.fld textarea,
+.fld select {
+  border: 0;
+  outline: 0;
+  font: inherit;
+  font-size: 12px;
+  padding: 2px 0;
+  background: transparent;
+  resize: vertical;
+}
+.fld:focus-within {
+  border-bottom-color: var(--ink);
+}
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.order-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  margin-bottom: 24px;
+}
+.order-table th,
+.order-table td {
+  text-align: left;
+  padding: 12px 16px;
+  border: 1px solid var(--line);
+}
+.order-table thead th {
+  background: var(--bg);
+}
+.payments {
+  border: 0;
+  padding: 0;
+  margin: 0 0 16px;
+  font-size: 12px;
+}
+.payments label {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 8px 0;
+}
+.pay-text {
+  background: var(--bg);
+  padding: 12px 16px;
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-size: 11px;
+}
+.privacy {
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 16px 0 20px;
+}
+.privacy a {
+  color: var(--ink);
+  text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+  .two-col {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .cart-table th:nth-child(2),
+  .cart-table td:nth-child(2) {
+    display: none;
+  }
+  .cart-table th,
+  .cart-table td {
+    padding: 12px 8px;
+  }
+}

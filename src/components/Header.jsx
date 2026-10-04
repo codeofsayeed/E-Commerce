@@ -1,5 +1,8 @@
 import { Link, NavLink } from "react-router-dom";
-import { FaSearch, FaUser, FaShoppingCart, FaBars } from "react-icons/fa";
+import CategoryMenu from "./CategoryMenu";
+import { useCart } from "../context/CartContext";
+import { useAuth } from "../context/AuthContext";
+import { FaSearch, FaUser, FaShoppingCart } from "react-icons/fa";
 
 const links = [
   { label: "Home", to: "/" },
@@ -10,6 +13,8 @@ const links = [
 ];
 
 export default function Header() {
+  const { count } = useCart();
+  const { user } = useAuth();
   return (
     <header>
       <div className="topbar container">
@@ -34,16 +39,22 @@ export default function Header() {
       </div>
       <div className="searchbar">
         <div className="container searchbar-inner">
-          <button className="shop-cat">
-            <FaBars size={10} /> Shop by Category
-          </button>
+          <CategoryMenu />
           <div className="search">
             <input placeholder="Search Products" aria-label="Search products" />
             <FaSearch size={11} />
           </div>
           <div className="icons">
-            <FaUser size={12} />
-            <FaShoppingCart size={12} />
+            <Link
+              to={user ? "/account" : "/login"}
+              aria-label={user ? "My account" : "Log in"}
+            >
+              <FaUser size={12} />
+            </Link>
+            <Link to="/cart" aria-label={`Cart, ${count} items`}>
+              <FaShoppingCart size={12} />
+              {count > 0 && <span className="cart-badge">{count}</span>}
+            </Link>
           </div>
         </div>
       </div>

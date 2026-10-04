@@ -1,4 +1,5 @@
 import { useMemo, useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import FilterSidebar from "../components/FilterSidebar";
@@ -10,8 +11,11 @@ import "../styles/products.css";
 
 export default function ProductsPage() {
   const { products, loading } = useProducts();
-  const [filters, setFilters] = useState({
-    category: null,
+  const [params, setParams] = useSearchParams();
+  const query = (params.get("q") || "").trim();
+  const category = params.get("category"); // category lives in the URL so the header menu can set it
+
+  const [others, setOthers] = useState({
     color: null,
     brand: null,
     price: null,
@@ -20,23 +24,38 @@ export default function ProductsPage() {
   const [perPage, setPerPage] = useState(9);
   const [page, setPage] = useState(1);
 
+  // The sidebar calls this like a normal state setter.
+  const filters = { category, ...others };
+  const setFilters = (updater) => {
+    const next = typeof updater === "function" ? updater(filters) : updater;
+    const { category: nextCategory, ...rest } = next;
+    setOthers(rest);
+    setParams((prev) => {
+      const p = new URLSearchParams(prev);
+      if (nextCategory) p.set("category", nextCategory);
+      else p.delete("category");
+      return p;
+    });
+  };
+
   useEffect(() => {
     setPage(1);
-  }, [filters, sort, perPage]);
+  }, [category, others, sort, perPage, query]);
 
   const visible = useMemo(() => {
-    const range = priceRanges.find((p) => p.label === filters.price);
+    const range = priceRanges.find((p) => p.label === others.price);
     let list = products.filter(
       (p) =>
-        (!filters.category || p.category === filters.category) &&
-        (!filters.color || p.color === filters.color) &&
-        (!filters.brand || p.brand === filters.brand) &&
+        (!query || p.name.toLowerCase().includes(query.toLowerCase())) &&
+        (!category || p.category === category) &&
+        (!others.color || p.color === others.color) &&
+        (!others.brand || p.brand === others.brand) &&
         (!range || (p.price >= range.min && p.price <= range.max)),
     );
     if (sort === "low") list = [...list].sort((a, b) => a.price - b.price);
     if (sort === "high") list = [...list].sort((a, b) => b.price - a.price);
     return list;
-  }, [products, filters, sort]);
+  }, [products, category, others, sort, query]);
 
   const pages = Math.max(1, Math.ceil(visible.length / perPage));
   const pageItems = visible.slice((page - 1) * perPage, page * perPage);
@@ -46,7 +65,8 @@ export default function ProductsPage() {
       <Header />
       <main className="container">
         <h1>Products</h1>
-        <p className="crumbs">Home / Products</p>
+        <p className="crumbs">Home / Products{category && ` / ${category}`}</p>
+        {query && <p className="search-note">Showing results for “{query}”</p>}
 
         <div className="layout">
           <FilterSidebar filters={filters} setFilters={setFilters} />
