@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import PageTitle from "../components/PageTitle";
@@ -51,6 +51,7 @@ export default function AccountPage() {
                 {t}
               </button>
             ))}
+            {user.role === "admin" && <Link to="/admin">Admin dashboard</Link>}
             <button onClick={logout}>Logout</button>
           </nav>
 

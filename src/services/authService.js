@@ -15,6 +15,13 @@
  *   logoutUser:    await signOut(auth);
  */
 const KEY = "orebi-users";
+
+// DEVELOPMENT ONLY: this email becomes an admin when it signs up or logs in.
+// Firebase later: give admins a custom claim (set with the Admin SDK or a Cloud Function),
+// e.g. { admin: true }, and check request.auth.token.admin in your Firestore security rules.
+const ADMIN_EMAILS = ["admin@domain.com"];
+const roleFor = (email) =>
+  ADMIN_EMAILS.includes(email) ? "admin" : "customer";
 const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 function readUsers() {
@@ -43,6 +50,7 @@ export async function registerUser({
     ...profile,
     email,
     id: `u_${Date.now()}`,
+    role: roleFor(email),
     name: `${profile.firstName} ${profile.lastName}`.trim(),
   };
   try {
@@ -58,7 +66,7 @@ export async function loginUser(email) {
   const user = readUsers().find((u) => u.email === email.trim().toLowerCase());
   if (!user)
     throw new Error("No account found for that email. Please sign up first.");
-  return user;
+  return { ...user, role: roleFor(user.email) };
 }
 
 export async function logoutUser() {

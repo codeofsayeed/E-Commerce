@@ -33,3 +33,15 @@ export async function placeOrder({ items, total, billing, notes, payment }) {
   }
   return order;
 }
+
+// Admin: change an order's status (Processing, Shipped, Delivered, Cancelled).
+// Firebase later: updateDoc(doc(db, 'orders', id), { status })
+export function updateOrderStatus(id, status) {
+  const next = getOrders().map((o) => (o.id === id ? { ...o, status } : o));
+  try {
+    localStorage.setItem(KEY, JSON.stringify(next));
+  } catch {
+    /* ignore */
+  }
+  return next;
+}

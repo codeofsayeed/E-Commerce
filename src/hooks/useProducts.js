@@ -1,20 +1,16 @@
 import { useEffect, useState } from "react";
-import { products as mock } from "../data/products";
+import { getProducts } from "../services/productService";
 
 /*
- * Firebase-ready: only this hook needs to change.
- *
- * import { collection, getDocs } from 'firebase/firestore';
- * import { db } from '../firebase';
- * const snap = await getDocs(collection(db, 'products'));
- * setProducts(snap.docs.map(d => ({ id: d.id, ...d.data() })));
+ * Firebase-ready: when productService.js reads from Firestore, make getProducts async
+ * and `await` it here. The rest of the app does not change.
  */
 export default function useProducts() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setProducts(mock);
+    setProducts(getProducts());
     setLoading(false);
   }, []);
 
