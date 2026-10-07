@@ -3,7 +3,7 @@ export const hero = {
   title: "Final Offer",
   discount: 50,
   text: "sale for all furniture items",
-  image: "", // headphones image URL
+  image: "/images/Headphone.svg",
 };
 
 export const services = [
@@ -18,7 +18,7 @@ export const promos = {
     title: "Phones Sale",
     discount: 30,
     text: "sale for all phones!",
-    image: "",
+    image: "/images/Lamp.svg",
   },
   small: [
     {
@@ -26,14 +26,14 @@ export const promos = {
       title: "Electronics Sale",
       discount: 70,
       text: "sale for all electronics items",
-      image: "",
+      image: "/images/Wallclock.svg",
     },
     {
       id: "furniture",
       title: "Furniture Offer",
       discount: 50,
       text: "sale for all furniture items",
-      image: "",
+      image: "/images/table-lamp.svg",
     },
   ],
 };
@@ -41,5 +41,5 @@ export const promos = {
 export const banner = {
   title: "Phone of the year",
   text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum.",
-  image: "", // clock image URL
+  image: "/images/wall-clock.svg",
 };

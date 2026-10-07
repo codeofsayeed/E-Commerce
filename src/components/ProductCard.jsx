@@ -1,5 +1,5 @@
-import { useCart } from "../context/CartContext";
-import { FaHeart, FaShoppingCart, FaSyncAlt } from "react-icons/fa";
+import { useCart } from '../context/CartContext';
+import { FaHeart, FaShoppingCart, FaSyncAlt } from 'react-icons/fa';
 
 export default function ProductCard({ product, onAddToCart, onWishlist }) {
   const { addItem } = useCart();
@@ -8,25 +8,11 @@ export default function ProductCard({ product, onAddToCart, onWishlist }) {
     <article className="card">
       <div className="thumb">
         {badge && <span className="badge">{badge}</span>}
-        {image ? (
-          <img src={image} alt={name} loading="lazy" />
-        ) : (
-          <div className="placeholder" aria-hidden="true" />
-        )}
+        {image ? <img src={image} alt={name} loading="lazy" /> : <div className="placeholder" aria-hidden="true" />}
         <div className="actions">
-          <button onClick={() => onWishlist?.(product)}>
-            Add to Wish List <FaHeart size={10} />
-          </button>
-          <button>
-            Compare <FaSyncAlt size={10} />
-          </button>
-          <button
-            onClick={() =>
-              onAddToCart ? onAddToCart(product) : addItem(product)
-            }
-          >
-            Add to Cart <FaShoppingCart size={10} />
-          </button>
+          <button onClick={() => onWishlist?.(product)}>Add to Wish List <FaHeart size={10} /></button>
+          <button>Compare <FaSyncAlt size={10} /></button>
+          <button onClick={() => (onAddToCart ? onAddToCart(product) : addItem(product))}>Add to Cart <FaShoppingCart size={10} /></button>
         </div>
       </div>
       <div className="meta">

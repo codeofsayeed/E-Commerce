@@ -126,8 +126,26 @@
   align-items: center;
 }
 .promo-stack .promo-text {
-  margin-left: auto;
-  width: 55%;
+  width: 50%;
+}
+.promo > img {
+  object-fit: cover;
+}
+.promo-stack .promo > img {
+  object-fit: contain;
+  object-position: right 28px center;
+  padding: 14px 0;
+}
+.promo-large > img {
+  object-fit: contain;
+  object-position: center 28px;
+  height: 72%;
+}
+.feature-img img {
+  display: block;
+  width: 100%;
+  max-width: 260px;
+  margin: auto;
 }
 
 /* product rows */

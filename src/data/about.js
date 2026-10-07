@@ -18,8 +18,12 @@ export const columns = [
 ];
 
 export const tiles = [
-  { label: "Our Brands", to: "/about/brands", image: "" }, // clock image URL
-  { label: "Our Stores", to: "/about/stores", image: "" }, // basket image URL
+  {
+    label: "Our Brands",
+    to: "/about/brands",
+    image: "/images/desk-clocks.svg",
+  },
+  { label: "Our Stores", to: "/about/stores", image: "/images/baskets.svg" },
 ];
 
 export const brands = [
@@ -28,35 +32,35 @@ export const brands = [
     name: "Brand 1",
     tagline: "Home & decor",
     text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    image: "",
+    image: "/images/mortar-bowl.svg",
   },
   {
     id: "b2",
     name: "Brand 2",
     tagline: "Electronics",
     text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    image: "",
+    image: "/images/headphones-magenta.svg",
   },
   {
     id: "b3",
     name: "Brand 3",
     tagline: "Fashion",
     text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    image: "",
+    image: "/images/cap.svg",
   },
   {
     id: "b4",
     name: "Brand 4",
     tagline: "Furniture",
     text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    image: "",
+    image: "/images/side-table.svg",
   },
   {
     id: "b5",
     name: "Brand 5",
     tagline: "Accessories",
     text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    image: "",
+    image: "/images/backpack.svg",
   },
 ];
 

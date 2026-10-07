@@ -6,7 +6,7 @@ export const posts = [
     title: "Styling a minimal living room",
     category: "Interior",
     date: "2026-09-28",
-    image: "",
+    image: "/images/side-table.svg",
     excerpt:
       "Simple pieces, a calm palette and a few well-chosen objects can change how a room feels.",
     body: [
@@ -21,7 +21,7 @@ export const posts = [
     title: "Five everyday carry essentials",
     category: "Style",
     date: "2026-09-19",
-    image: "",
+    image: "/images/backpack.svg",
     excerpt:
       "From a reliable backpack to the right cap, the small things we reach for every day.",
     body: [
@@ -35,7 +35,7 @@ export const posts = [
     title: "Why we love natural materials",
     category: "Design",
     date: "2026-09-10",
-    image: "",
+    image: "/images/basket.svg",
     excerpt:
       "Wicker, stone and wood age beautifully and bring warmth to any space.",
     body: [
@@ -50,7 +50,7 @@ export const posts = [
     title: "Choosing the right headphones",
     category: "Tech",
     date: "2026-08-30",
-    image: "",
+    image: "/images/headphones-magenta.svg",
     excerpt:
       "Over-ear, on-ear or in-ear? A short guide to finding the pair that fits your day.",
     body: [
@@ -64,7 +64,7 @@ export const posts = [
     title: "A clock for every room",
     category: "Interior",
     date: "2026-08-21",
-    image: "",
+    image: "/images/wall-clock.svg",
     excerpt:
       "Wall, desk or bedside: how to pick a clock that works as both object and tool.",
     body: [
@@ -78,7 +78,7 @@ export const posts = [
     title: "Our guide to thoughtful gift giving",
     category: "Style",
     date: "2026-08-12",
-    image: "",
+    image: "/images/mortar-bowl.svg",
     excerpt:
       "Ideas for every budget, from small desk objects to statement furniture.",
     body: [

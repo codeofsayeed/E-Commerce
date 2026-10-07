@@ -14,6 +14,22 @@ const names = [
   "Round Sunglasses",
 ];
 
+// Image file (in public/images) for each product name. Replace the files to use real photos.
+const imageFor = {
+  "Mortar Bowl": "mortar-bowl",
+  "Wireless Headphones": "headphones-magenta",
+  "Side Table": "side-table",
+  "Baseball Cap": "cap",
+  "Wall Clock": "wall-clock",
+  Backpack: "backpack",
+  Sunglasses: "sunglasses",
+  "Coffee Table": "side-table",
+  "Classic Cap": "cap",
+  Basket: "basket",
+  "Desk Clock": "desk-clock",
+  "Round Sunglasses": "sunglasses",
+};
+
 export const products = Array.from({ length: 36 }, (_, i) => ({
   id: String(i + 1),
   name: names[i % names.length],
@@ -29,7 +45,7 @@ export const products = Array.from({ length: 36 }, (_, i) => ({
         : [1, 6, 7, 8].includes(i)
           ? "-10%"
           : null,
-  image: "", // put image URL here (Firebase Storage URL later)
+  image: `/images/${imageFor[names[i % names.length]]}.svg`, // later: a Firebase Storage URL
 }));
 
 export const categories = [
